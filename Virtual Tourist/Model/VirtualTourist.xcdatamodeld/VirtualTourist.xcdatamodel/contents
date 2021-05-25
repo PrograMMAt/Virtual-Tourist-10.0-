@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CorePhoto" representedClassName="CorePhoto" syncable="YES" codeGenerationType="class">
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="img" optional="YES" attributeType="Binary" valueTransformerName="NSSecureUnarchiveFromData" allowsExternalBinaryDataStorage="YES" customClassName="NSMutableArray"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="photos" inverseEntity="Location"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES" codeGenerationType="class">
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CorePhoto" inverseName="location" inverseEntity="CorePhoto"/>
+    </entity>
+    <elements>
+        <element name="CorePhoto" positionX="-5962.15625" positionY="1240.7890625" width="128" height="88"/>
+        <element name="Location" positionX="-6268.48046875" positionY="1210.53515625" width="128" height="103"/>
+    </elements>
+</model>
